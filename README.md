@@ -20,7 +20,11 @@ patterns and strengthen defensive posture.
 | Date | Write-up | Category | Tags |
 | :--- | :--- | :--- | :--- |
 | 2026-09-06 | [Hunting a STRRAT C2 Channel in a PCAP: A Step-by-Step Traffic Analysis](reports/2026-09-06-strrat-c2-analysis/report.md) | Malware Analysis | `pcap`, `wireshark`, `command-and-control`, `strrat` |
+| 2026-08-06 | [APT28 vs APT29: Two Russian APTs, Two Doctrines, One ATT&CK Lens](reports/2026-08-06-apt28-vs-apt29/report.md) | Threat Intelligence | `apt28`, `apt29`, `mitre-attack`, `ttp-analysis` |
 | 2026-07-16 | [Triaging Windows Attacks in Wazuh: Where rule.level Lies](reports/2026-07-16-wazuh-sysmon-triage/report.md) | Detection Engineering | `wazuh`, `sysmon`, `siem`, `alert-triage` |
+| 2026-07-15 | [auth2.log: When the Raw Counts Lie (message repeated & invalid user)](reports/2026-07-15-linux-auth2log-bruteforce/report.md) | Log Analysis | `linux`, `auth-log`, `ssh`, `brute-force` |
+| 2026-07-14 | [IOC vs IOA: Fingerprints of a Crime vs Someone Picking the Lock](reports/2026-07-14-ioc-vs-ioa/report.md) | Fundamentals | `ioc`, `ioa`, `detection-engineering`, `threat-intelligence` |
+| 2026-07-14 | [Reading auth.log by Hand: SSH Forensics Without a SIEM](reports/2026-07-14-linux-authlog-analysis/report.md) | Log Analysis | `linux`, `auth-log`, `ssh`, `brute-force` |
 <!-- REPORTS:END -->
 
 ## 🛠 Tools & Methodologies

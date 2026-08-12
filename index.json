@@ -1,26 +1,46 @@
 {
-  "generated_at": "2026-08-12T17:10:10Z",
-  "count": 2,
+  "generated_at": "2026-08-12T17:19:28Z",
+  "count": 6,
   "base_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/",
   "categories": [
     "Detection Engineering",
-    "Malware Analysis"
+    "Fundamentals",
+    "Log Analysis",
+    "Malware Analysis",
+    "Threat Intelligence"
   ],
   "tags": [
     "alert-triage",
+    "apt28",
+    "apt29",
+    "auth-log",
+    "awk",
     "beaconing",
+    "brute-force",
     "command-and-control",
+    "cozy-bear",
+    "detection-engineering",
     "detection-gap",
     "false-positive",
+    "fancy-bear",
+    "grep",
+    "incident-response",
+    "ioa",
+    "ioc",
+    "linux",
+    "log-forensics",
     "lsass",
     "mitre-attack",
     "pcap",
     "powershell",
     "rat",
     "siem",
+    "soc-fundamentals",
+    "ssh",
     "strrat",
     "sysmon",
     "threat-intelligence",
+    "ttp-analysis",
     "wazuh",
     "wireshark"
   ],
@@ -176,6 +196,95 @@
       "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-09-06-strrat-c2-analysis/report.md"
     },
     {
+      "slug": "apt28-vs-apt29",
+      "title": "APT28 vs APT29: Two Russian APTs, Two Doctrines, One ATT&CK Lens",
+      "date": "2026-08-06",
+      "updated": "2026-08-06",
+      "lang": "en",
+      "status": "published",
+      "category": "Threat Intelligence",
+      "subcategory": "Adversary Analysis",
+      "tags": [
+        "apt28",
+        "apt29",
+        "mitre-attack",
+        "ttp-analysis",
+        "threat-intelligence",
+        "fancy-bear",
+        "cozy-bear"
+      ],
+      "summary": "A SOC-analyst comparison of APT28 (Fancy Bear, GRU) and APT29 (Cozy Bear, SVR) through MITRE ATT&CK — where their TTPs overlap, where they diverge, and how each group's intelligence-agency doctrine drives a different detection strategy.",
+      "reading_time": 9,
+      "difficulty": "intermediate",
+      "author": {
+        "name": "Enes Küçükkaya",
+        "url": "https://www.linkedin.com/in/eneskucukkaya/"
+      },
+      "source": {
+        "name": "MITRE ATT&CK",
+        "reference": "Groups G0007, G0016; Campaigns C0024, C0051",
+        "url": "https://attack.mitre.org/"
+      },
+      "tools": [
+        "MITRE ATT&CK"
+      ],
+      "mitre_attack": [
+        {
+          "id": "T1566",
+          "name": "Phishing",
+          "tactic": "Initial Access",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1195.002",
+          "name": "Supply Chain Compromise: Software Supply Chain",
+          "tactic": "Initial Access",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1199",
+          "name": "Trusted Relationship",
+          "tactic": "Initial Access",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1606.002",
+          "name": "Forge Web Credentials: SAML Tokens",
+          "tactic": "Credential Access",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1134",
+          "name": "Access Token Manipulation",
+          "tactic": "Defense Evasion",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1059.001",
+          "name": "Command and Scripting Interpreter: PowerShell",
+          "tactic": "Execution",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1071",
+          "name": "Application Layer Protocol",
+          "tactic": "Command and Control",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1041",
+          "name": "Exfiltration Over C2 Channel",
+          "tactic": "Exfiltration",
+          "confidence": "confirmed"
+        }
+      ],
+      "dir": "reports/2026-08-06-apt28-vs-apt29",
+      "path": "reports/2026-08-06-apt28-vs-apt29/report.md",
+      "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-08-06-apt28-vs-apt29/",
+      "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-08-06-apt28-vs-apt29/report.md",
+      "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-08-06-apt28-vs-apt29/report.md"
+    },
+    {
       "slug": "wazuh-sysmon-triage",
       "title": "Triaging Windows Attacks in Wazuh: Where rule.level Lies",
       "date": "2026-07-16",
@@ -266,6 +375,168 @@
       "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-16-wazuh-sysmon-triage/",
       "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-16-wazuh-sysmon-triage/report.md",
       "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-07-16-wazuh-sysmon-triage/report.md"
+    },
+    {
+      "slug": "linux-auth2log-bruteforce",
+      "title": "auth2.log: When the Raw Counts Lie (message repeated & invalid user)",
+      "date": "2026-07-15",
+      "updated": "2026-07-15",
+      "lang": "en",
+      "status": "published",
+      "category": "Log Analysis",
+      "subcategory": "DFIR",
+      "tags": [
+        "linux",
+        "auth-log",
+        "ssh",
+        "brute-force",
+        "log-forensics",
+        "awk",
+        "grep"
+      ],
+      "summary": "Eight SSH-authentication questions answered from a 7,121-line auth2.log with grep/gawk — and the two syslog traps that make naive counts wrong: \"message repeated N times\" (root: 211 raw vs 532 real) and the \"invalid user\" username offset. Every number is shown with the command that produced it.",
+      "reading_time": 11,
+      "difficulty": "intermediate",
+      "author": {
+        "name": "Enes Küçükkaya",
+        "url": "https://www.linkedin.com/in/eneskucukkaya/"
+      },
+      "tools": [
+        "grep",
+        "gawk",
+        "sort",
+        "uniq"
+      ],
+      "target": {
+        "system": "ip-10-77-20-248 (Linux server, sshd on port 2222)",
+        "artifact": "auth2.log (7,121 lines, 27 Mar – 20 Apr)"
+      },
+      "iocs": [
+        {
+          "type": "ipv4",
+          "value": "24.151.103.17",
+          "context": "157 attempts; successful login to elastic_user_0 after 147 failures",
+          "confidence": "confirmed"
+        },
+        {
+          "type": "ipv4",
+          "value": "49.4.143.105",
+          "context": "120 failed attempts against root (all failed)",
+          "confidence": "confirmed"
+        },
+        {
+          "type": "ipv4",
+          "value": "34.204.227.175",
+          "context": "43 attempts with an empty username field (scanning behaviour)",
+          "confidence": "probable"
+        },
+        {
+          "type": "user",
+          "value": "elastic_user_0",
+          "context": "Compromised account (successful login after brute-force window)",
+          "confidence": "confirmed"
+        }
+      ],
+      "related": [
+        "linux-authlog-analysis",
+        "ioc-vs-ioa"
+      ],
+      "dir": "reports/2026-07-15-linux-auth2log-bruteforce",
+      "path": "reports/2026-07-15-linux-auth2log-bruteforce/report.md",
+      "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-15-linux-auth2log-bruteforce/",
+      "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-15-linux-auth2log-bruteforce/report.md",
+      "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-07-15-linux-auth2log-bruteforce/report.md"
+    },
+    {
+      "slug": "ioc-vs-ioa",
+      "title": "IOC vs IOA: Fingerprints of a Crime vs Someone Picking the Lock",
+      "date": "2026-07-14",
+      "updated": "2026-07-14",
+      "lang": "en",
+      "status": "published",
+      "category": "Fundamentals",
+      "subcategory": "SOC Operations",
+      "tags": [
+        "ioc",
+        "ioa",
+        "detection-engineering",
+        "threat-intelligence",
+        "soc-fundamentals"
+      ],
+      "summary": "The difference between an Indicator of Compromise and an Indicator of Attack, worked through with real values and behaviours pulled from my own log analyses — why IOCs go stale, why IOAs survive a tooling change, and why a SOC needs both.",
+      "reading_time": 7,
+      "difficulty": "beginner",
+      "author": {
+        "name": "Enes Küçükkaya",
+        "url": "https://www.linkedin.com/in/eneskucukkaya/"
+      },
+      "related": [
+        "linux-auth2log-bruteforce",
+        "wazuh-sysmon-triage"
+      ],
+      "dir": "reports/2026-07-14-ioc-vs-ioa",
+      "path": "reports/2026-07-14-ioc-vs-ioa/report.md",
+      "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-14-ioc-vs-ioa/",
+      "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-14-ioc-vs-ioa/report.md",
+      "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-07-14-ioc-vs-ioa/report.md"
+    },
+    {
+      "slug": "linux-authlog-analysis",
+      "title": "Reading auth.log by Hand: SSH Forensics Without a SIEM",
+      "date": "2026-07-14",
+      "updated": "2026-07-14",
+      "lang": "en",
+      "status": "published",
+      "category": "Log Analysis",
+      "subcategory": "DFIR",
+      "tags": [
+        "linux",
+        "auth-log",
+        "ssh",
+        "brute-force",
+        "log-forensics",
+        "grep",
+        "incident-response"
+      ],
+      "summary": "A manual forensic read of an SSH auth.log using nothing but grep/sort/uniq — answering three assigned questions with an evidence chain, then documenting the awkward parts: a command mistake that returned a false zero, an odd multi-account session burst, and log entries too inconsistent to trust.",
+      "reading_time": 13,
+      "difficulty": "intermediate",
+      "author": {
+        "name": "Enes Küçükkaya",
+        "url": "https://www.linkedin.com/in/eneskucukkaya/"
+      },
+      "tools": [
+        "grep",
+        "sort",
+        "uniq"
+      ],
+      "target": {
+        "system": "ubuntuvm (desktop/workstation)",
+        "artifact": "auth.log (324 lines)"
+      },
+      "iocs": [
+        {
+          "type": "ipv4",
+          "value": "13.148.162.206",
+          "context": "17 failed SSH attempts, all against root (targeted brute-force)",
+          "confidence": "confirmed"
+        },
+        {
+          "type": "ipv4",
+          "value": "172.16.8.1",
+          "context": "Source of a suspicious multi-account session sequence",
+          "confidence": "probable"
+        }
+      ],
+      "related": [
+        "linux-auth2log-bruteforce",
+        "ioc-vs-ioa"
+      ],
+      "dir": "reports/2026-07-14-linux-authlog-analysis",
+      "path": "reports/2026-07-14-linux-authlog-analysis/report.md",
+      "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-14-linux-authlog-analysis/",
+      "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-14-linux-authlog-analysis/report.md",
+      "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-07-14-linux-authlog-analysis/report.md"
     }
   ]
 }
