@@ -1,18 +1,27 @@
 {
-  "generated_at": "2026-08-12T17:02:01Z",
-  "count": 1,
+  "generated_at": "2026-08-12T17:10:10Z",
+  "count": 2,
   "base_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/",
   "categories": [
+    "Detection Engineering",
     "Malware Analysis"
   ],
   "tags": [
+    "alert-triage",
     "beaconing",
     "command-and-control",
+    "detection-gap",
+    "false-positive",
+    "lsass",
     "mitre-attack",
     "pcap",
+    "powershell",
     "rat",
+    "siem",
     "strrat",
+    "sysmon",
     "threat-intelligence",
+    "wazuh",
     "wireshark"
   ],
   "reports": [
@@ -165,6 +174,98 @@
       "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-09-06-strrat-c2-analysis/",
       "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-09-06-strrat-c2-analysis/report.md",
       "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-09-06-strrat-c2-analysis/report.md"
+    },
+    {
+      "slug": "wazuh-sysmon-triage",
+      "title": "Triaging Windows Attacks in Wazuh: Where rule.level Lies",
+      "date": "2026-07-16",
+      "updated": "2026-07-16",
+      "lang": "en",
+      "status": "published",
+      "category": "Detection Engineering",
+      "subcategory": "SOC Operations",
+      "tags": [
+        "wazuh",
+        "sysmon",
+        "siem",
+        "alert-triage",
+        "detection-gap",
+        "false-positive",
+        "powershell",
+        "lsass",
+        "mitre-attack"
+      ],
+      "summary": "Four controlled attacks run through a Wazuh + Sysmon lab and triaged like a SOC L1 analyst — two true positives, one level-15 false positive, and a credential-dumping attack that generated no alert at all. The through-line: rule.level alone never decides whether an event is a real threat.",
+      "cover": "assets/01-wazuh-discover-overview.png",
+      "cover_alt": "Wazuh Discover showing generated activity ranked by rule.level",
+      "reading_time": 12,
+      "difficulty": "intermediate",
+      "author": {
+        "name": "Enes Küçükkaya",
+        "url": "https://www.linkedin.com/in/eneskucukkaya/"
+      },
+      "tools": [
+        "Wazuh",
+        "Sysmon",
+        "PowerShell",
+        "OpenSearch Dashboards"
+      ],
+      "lab": {
+        "manager": "Wazuh Manager (Ubuntu, KVM)",
+        "agent": "windows-agent 192.168.122.81 (WIN-U4KI1MI7UR7)",
+        "telemetry": "Sysmon + Windows Event Log → Wazuh agent → Manager → Dashboard"
+      },
+      "mitre_attack": [
+        {
+          "id": "T1547.001",
+          "name": "Registry Run Keys / Startup Folder",
+          "tactic": "Persistence",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1059.001",
+          "name": "Command and Scripting Interpreter: PowerShell",
+          "tactic": "Execution",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1003.001",
+          "name": "OS Credential Dumping: LSASS Memory",
+          "tactic": "Credential Access",
+          "confidence": "confirmed"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "A",
+          "technique": "T1547.001",
+          "verdict": "true-positive",
+          "rule": "92302 (level 6)"
+        },
+        {
+          "id": "B",
+          "technique": "T1059.001",
+          "verdict": "true-positive",
+          "rule": "92057 (level 12)"
+        },
+        {
+          "id": "B-side",
+          "technique": null,
+          "verdict": "false-positive",
+          "rule": "level 15 (benign)"
+        },
+        {
+          "id": "C",
+          "technique": "T1003.001",
+          "verdict": "detection-gap",
+          "rule": "none — not detected"
+        }
+      ],
+      "dir": "reports/2026-07-16-wazuh-sysmon-triage",
+      "path": "reports/2026-07-16-wazuh-sysmon-triage/report.md",
+      "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-16-wazuh-sysmon-triage/",
+      "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-16-wazuh-sysmon-triage/report.md",
+      "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-07-16-wazuh-sysmon-triage/report.md"
     }
   ]
 }

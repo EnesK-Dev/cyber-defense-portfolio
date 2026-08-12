@@ -20,6 +20,7 @@ patterns and strengthen defensive posture.
 | Date | Write-up | Category | Tags |
 | :--- | :--- | :--- | :--- |
 | 2026-09-06 | [Hunting a STRRAT C2 Channel in a PCAP: A Step-by-Step Traffic Analysis](reports/2026-09-06-strrat-c2-analysis/report.md) | Malware Analysis | `pcap`, `wireshark`, `command-and-control`, `strrat` |
+| 2026-07-16 | [Triaging Windows Attacks in Wazuh: Where rule.level Lies](reports/2026-07-16-wazuh-sysmon-triage/report.md) | Detection Engineering | `wazuh`, `sysmon`, `siem`, `alert-triage` |
 <!-- REPORTS:END -->
 
 ## 🛠 Tools & Methodologies
