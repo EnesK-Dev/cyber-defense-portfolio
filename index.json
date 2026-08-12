@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-08-12T17:02:01Z",
+  "count": 1,
+  "base_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/",
+  "categories": [
+    "Malware Analysis"
+  ],
+  "tags": [
+    "beaconing",
+    "command-and-control",
+    "mitre-attack",
+    "pcap",
+    "rat",
+    "strrat",
+    "threat-intelligence",
+    "wireshark"
+  ],
+  "reports": [
+    {
+      "slug": "strrat-c2-analysis",
+      "title": "Hunting a STRRAT C2 Channel in a PCAP: A Step-by-Step Traffic Analysis",
+      "date": "2026-09-06",
+      "updated": "2026-09-06",
+      "lang": "en",
+      "status": "published",
+      "category": "Malware Analysis",
+      "subcategory": "Network Forensics",
+      "tags": [
+        "pcap",
+        "wireshark",
+        "command-and-control",
+        "strrat",
+        "rat",
+        "beaconing",
+        "threat-intelligence",
+        "mitre-attack"
+      ],
+      "summary": "Starting from a single PCAP and nothing but a subnet range, I identified an infected Windows 11 host, isolated a non-standard-port C2 channel by traffic shape alone, and confirmed STRRAT directly from cleartext beacon content — then reconstructed the delivery chain through timeline correlation.",
+      "cover": "assets/04-follow-tcp-stream-strrat-beacon.png",
+      "cover_alt": "Wireshark Follow TCP Stream output showing a cleartext STRRAT beacon",
+      "reading_time": 14,
+      "difficulty": "intermediate",
+      "author": {
+        "name": "Enes Küçükkaya",
+        "url": "https://www.linkedin.com/in/eneskucukkaya/"
+      },
+      "source": {
+        "name": "malware-traffic-analysis.net",
+        "exercise": "2024-07-30-traffic-analysis-exercise.pcap",
+        "url": "https://www.malware-traffic-analysis.net/"
+      },
+      "tools": [
+        "Wireshark",
+        "VirusTotal"
+      ],
+      "mitre_attack": [
+        {
+          "id": "T1566",
+          "name": "Phishing",
+          "tactic": "Initial Access",
+          "confidence": "probable"
+        },
+        {
+          "id": "T1204.002",
+          "name": "User Execution: Malicious File",
+          "tactic": "Execution",
+          "confidence": "probable"
+        },
+        {
+          "id": "T1059",
+          "name": "Command and Scripting Interpreter",
+          "tactic": "Execution",
+          "confidence": "probable"
+        },
+        {
+          "id": "T1071",
+          "name": "Application Layer Protocol",
+          "tactic": "Command and Control",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1105",
+          "name": "Ingress Tool Transfer",
+          "tactic": "Command and Control",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1113",
+          "name": "Screen Capture",
+          "tactic": "Collection",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1056",
+          "name": "Input Capture",
+          "tactic": "Collection",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1082",
+          "name": "System Information Discovery",
+          "tactic": "Discovery",
+          "confidence": "confirmed"
+        }
+      ],
+      "iocs": [
+        {
+          "type": "ipv4",
+          "value": "141.98.10.79",
+          "context": "STRRAT C2 server",
+          "confidence": "confirmed"
+        },
+        {
+          "type": "port",
+          "value": "12132/tcp",
+          "context": "C2 listener (non-standard)",
+          "confidence": "confirmed"
+        },
+        {
+          "type": "domain",
+          "value": "141-98-10-79.plesk.page",
+          "context": "Resolves to C2 IP (VirusTotal passive DNS)",
+          "confidence": "probable"
+        },
+        {
+          "type": "domain",
+          "value": "festive-margulis.141-98-10-79.plesk.page",
+          "context": "Resolves to C2 IP (VirusTotal passive DNS)",
+          "confidence": "probable"
+        },
+        {
+          "type": "domain",
+          "value": "objects.githubusercontent.com",
+          "context": "Payload staging host (legitimate service, abused)",
+          "confidence": "probable"
+        },
+        {
+          "type": "ipv4",
+          "value": "185.199.110.133",
+          "context": "GitHub content CDN edge serving the payload",
+          "confidence": "probable"
+        },
+        {
+          "type": "malware",
+          "value": "STRRAT v1.6",
+          "context": "Java-based RAT identified from beacon content",
+          "confidence": "confirmed"
+        },
+        {
+          "type": "filename",
+          "value": "Invoice & Packing List.eml",
+          "context": "Phishing email associated with C2 IP (VirusTotal relations, 36/63)",
+          "confidence": "probable"
+        }
+      ],
+      "victim": {
+        "ip": "172.16.1.66",
+        "mac": "00:1e:64:ec:f3:08",
+        "hostname": "DESKTOP-SKBR25F",
+        "user": "ccollier",
+        "os": "Windows 11 Pro (64-bit)"
+      },
+      "dir": "reports/2026-09-06-strrat-c2-analysis",
+      "path": "reports/2026-09-06-strrat-c2-analysis/report.md",
+      "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-09-06-strrat-c2-analysis/",
+      "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-09-06-strrat-c2-analysis/report.md",
+      "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-09-06-strrat-c2-analysis/report.md"
+    }
+  ]
+}

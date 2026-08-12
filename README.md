@@ -1,26 +1,57 @@
-# Cyber-defense-portfolio
-Incident response investigations, threat hunting reports, and detection engineering notes. A collection of documented security analysis workflows and technical deep-dives into real-world threats.
+# Cyber Defense Portfolio
 
+Incident response investigations, threat hunting reports, and detection engineering
+notes — documented security analysis workflows and technical deep-dives into
+real-world threats.
 
-This repository serves as my personal workspace for documenting security incident investigations, threat hunting reports, and forensic log analyses.
+Each write-up is deliberately structured as a **reasoning trail** rather than a
+findings list: which filter was applied, why it was chosen, what each result ruled
+out, and where the evidence stops short of proof.
 
 ## About Me
-I am a cybersecurity student focused on Security Operations Center (SOC) processes, log analysis, and threat intelligence. My core objective is to decode complex attack patterns and strengthen defensive posture.
 
-## 📋 Incident Write-ups
-Below is a structured log of the security investigations I have conducted:
+I am a cybersecurity student focused on Security Operations Center (SOC) processes,
+log analysis, and threat intelligence. My core objective is to decode complex attack
+patterns and strengthen defensive posture.
 
-| Date | Incident / Topic | Category |
-| :--- | :--- | :--- |
-| 2026-09-06 | [STRRAT C2 Analysis](reports/2026-09-06-STRRAT/report.md) | Malware Analysis / IR |
+## 📋 Write-ups
 
-*(This list will be updated as new investigations are completed.)*
+<!-- REPORTS:BEGIN -->
+| Date | Write-up | Category | Tags |
+| :--- | :--- | :--- | :--- |
+| 2026-09-06 | [Hunting a STRRAT C2 Channel in a PCAP: A Step-by-Step Traffic Analysis](reports/2026-09-06-strrat-c2-analysis/report.md) | Malware Analysis | `pcap`, `wireshark`, `command-and-control`, `strrat` |
+<!-- REPORTS:END -->
 
 ## 🛠 Tools & Methodologies
-- **Network Analysis:** Wireshark, TCPDump
+
+- **Network Analysis:** Wireshark, tcpdump
 - **Log Analysis:** grep, awk, sed
-- **Threat Intelligence:** VirusTotal, MITRE ATT&CK Framework
-- **OSINT:** Passive DNS, Whois
+- **SIEM / Detection:** Wazuh
+- **Threat Intelligence:** VirusTotal, OpenCTI, MITRE ATT&CK
+- **OSINT:** Passive DNS, WHOIS
+
+## 📦 Repository Structure
+
+This repo doubles as the content source for my blog — the write-ups live here, and
+the site reads them from [`index.json`](index.json). See
+[`CONTENT_SCHEMA.md`](CONTENT_SCHEMA.md) for the front-matter contract and consumption
+model.
+
+```
+reports/<YYYY-MM-DD>-<slug>/report.md   # front matter + body
+reports/<YYYY-MM-DD>-<slug>/assets/     # screenshots, referenced relatively
+scripts/docx2md.py                      # .docx → report scaffold
+scripts/build_index.py                  # regenerates index.json + the table above
+```
+
+Adding a write-up:
+
+```bash
+python3 scripts/docx2md.py ~/path/to/report.docx --slug my-analysis --date 2026-09-20
+# edit front matter, rename assets, write alt text, set status: published
+python3 scripts/build_index.py
+```
 
 ---
-*Contact: https://www.linkedin.com/in/eneskucukkaya/* | *Contact: eneskucukkaya0@gmail.com*
+
+*[LinkedIn](https://www.linkedin.com/in/eneskucukkaya/) · eneskucukkaya0@gmail.com*
