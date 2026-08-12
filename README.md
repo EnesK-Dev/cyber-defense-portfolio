@@ -43,7 +43,8 @@ patterns and strengthen defensive posture.
 This repo doubles as the content source for my blog — the write-ups live here, and
 the site reads them from [`index.json`](index.json). See
 [`CONTENT_SCHEMA.md`](CONTENT_SCHEMA.md) for the front-matter contract and consumption
-model.
+model, and [`docs/adding-a-report.md`](docs/adding-a-report.md) for the step-by-step
+workflow to turn a source `.docx` into a published write-up.
 
 ```
 reports/<YYYY-MM-DD>-<slug>/report.md   # front matter + body
