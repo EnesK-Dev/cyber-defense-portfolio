@@ -1,45 +1,68 @@
 {
-  "generated_at": "2026-08-12T17:19:28Z",
-  "count": 6,
+  "generated_at": "2026-08-12T17:28:47Z",
+  "count": 9,
   "base_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/",
   "categories": [
     "Detection Engineering",
     "Fundamentals",
     "Log Analysis",
     "Malware Analysis",
+    "Penetration Testing",
     "Threat Intelligence"
   ],
   "tags": [
     "alert-triage",
+    "alienvault-otx",
     "apt28",
     "apt29",
     "auth-log",
     "awk",
     "beaconing",
     "brute-force",
+    "cisa-kev",
     "command-and-control",
+    "connectors",
     "cozy-bear",
+    "cti",
+    "cyber-kill-chain",
     "detection-engineering",
     "detection-gap",
+    "distcc",
+    "docker",
+    "edr",
     "false-positive",
     "fancy-bear",
     "grep",
+    "gtfobins",
     "incident-response",
     "ioa",
     "ioc",
     "linux",
     "log-forensics",
     "lsass",
+    "metasploit",
+    "metasploitable2",
     "mitre-attack",
+    "nids",
+    "opencti",
+    "openvas",
+    "owasp",
     "pcap",
     "powershell",
+    "privilege-escalation",
     "rat",
+    "sentinelone",
     "siem",
     "soc-fundamentals",
     "ssh",
+    "stix2",
     "strrat",
+    "suid",
+    "suricata",
+    "suricata-rules",
     "sysmon",
     "threat-intelligence",
+    "threatfox",
     "ttp-analysis",
     "wazuh",
     "wireshark"
@@ -283,6 +306,247 @@
       "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-08-06-apt28-vs-apt29/",
       "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-08-06-apt28-vs-apt29/report.md",
       "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-08-06-apt28-vs-apt29/report.md"
+    },
+    {
+      "slug": "opencti-setup-review",
+      "title": "From Empty Dashboard to Live Intel: Standing Up OpenCTI With Real Feeds",
+      "date": "2026-07-30",
+      "updated": "2026-07-30",
+      "lang": "en",
+      "status": "published",
+      "category": "Threat Intelligence",
+      "subcategory": "CTI Platforms",
+      "tags": [
+        "opencti",
+        "cti",
+        "threat-intelligence",
+        "stix2",
+        "connectors",
+        "docker",
+        "threatfox",
+        "cisa-kev",
+        "alienvault-otx"
+      ],
+      "summary": "Deploying OpenCTI with Docker Compose and turning a blank install into a live CTI platform by wiring in four real feeds (MITRE ATT&CK, abuse.ch ThreatFox, CISA KEV, AlienVault OTX) — then touring reports, the knowledge graph, and the observable/indicator model, including the connector failures fixed along the way.",
+      "cover": "assets/04-dragonreturn-knowledge-graph.png",
+      "cover_alt": "OpenCTI knowledge graph of the Operation DragonReturn campaign",
+      "reading_time": 12,
+      "difficulty": "intermediate",
+      "author": {
+        "name": "Enes Küçükkaya",
+        "url": "https://www.linkedin.com/in/eneskucukkaya/"
+      },
+      "tools": [
+        "OpenCTI",
+        "Docker Compose"
+      ],
+      "lab": {
+        "platform": "OpenCTI (Filigran), Docker Compose, host 127.0.0.1:8080"
+      },
+      "connectors": [
+        {
+          "name": "ThreatFox",
+          "source": "abuse.ch",
+          "provides": "4,320+ malicious IP/domain/hash indicators"
+        },
+        {
+          "name": "CISA KEV",
+          "source": "CISA",
+          "provides": "470 known-exploited CVEs"
+        },
+        {
+          "name": "AlienVault OTX",
+          "source": "AlienVault",
+          "provides": "Real analysis reports + related indicators/malware"
+        },
+        {
+          "name": "MITRE ATT&CK",
+          "source": "MITRE",
+          "provides": "Static ATT&CK taxonomy"
+        }
+      ],
+      "related": [
+        "ioc-vs-ioa",
+        "apt28-vs-apt29"
+      ],
+      "dir": "reports/2026-07-30-opencti-setup-review",
+      "path": "reports/2026-07-30-opencti-setup-review/report.md",
+      "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-30-opencti-setup-review/",
+      "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-30-opencti-setup-review/report.md",
+      "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-07-30-opencti-setup-review/report.md"
+    },
+    {
+      "slug": "metasploitable2-vuln-exploit",
+      "title": "Chaining Two Medium Bugs to Root: DistCC RCE + a SUID nmap on Metasploitable2",
+      "date": "2026-07-29",
+      "updated": "2026-07-29",
+      "lang": "en",
+      "status": "published",
+      "category": "Penetration Testing",
+      "subcategory": "Vulnerability Assessment",
+      "tags": [
+        "metasploit",
+        "openvas",
+        "metasploitable2",
+        "privilege-escalation",
+        "distcc",
+        "suid",
+        "gtfobins",
+        "cyber-kill-chain"
+      ],
+      "summary": "An end-to-end exploit chain in an isolated lab: OpenVAS scan → prioritise by CVSS/QoD → DistCC RCE (CVE-2004-2687) for a daemon shell → a misconfigured SUID nmap (GTFOBins) for root. The takeaway is that chaining two non-critical weaknesses yields full compromise — plus a payload-mismatch debug along the way.",
+      "cover": "assets/16-root-euid-verified.png",
+      "cover_alt": "Terminal showing euid=0(root) after the SUID nmap privilege escalation",
+      "reading_time": 15,
+      "difficulty": "intermediate",
+      "author": {
+        "name": "Enes Küçükkaya",
+        "url": "https://www.linkedin.com/in/eneskucukkaya/"
+      },
+      "tools": [
+        "OpenVAS/Greenbone",
+        "Metasploit Framework",
+        "nmap"
+      ],
+      "lab": {
+        "target": "Metasploitable2 (192.168.122.109)",
+        "attacker": "KVM host on virbr0 (192.168.122.1)",
+        "network": "Isolated KVM virbr0, 192.168.122.0/24 (no external contact)"
+      },
+      "mitre_attack": [
+        {
+          "id": "T1595",
+          "name": "Active Scanning",
+          "tactic": "Reconnaissance",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1210",
+          "name": "Exploitation of Remote Services",
+          "tactic": "Lateral Movement",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1548.001",
+          "name": "Abuse Elevation Control Mechanism: Setuid and Setgid",
+          "tactic": "Privilege Escalation",
+          "confidence": "confirmed"
+        }
+      ],
+      "cves": [
+        {
+          "id": "CVE-2004-2687",
+          "cwe": "CWE-306",
+          "component": "DistCC daemon (port 3632)",
+          "context": "Missing authentication → remote command execution"
+        },
+        {
+          "id": null,
+          "cwe": "CWE-269",
+          "component": "/usr/bin/nmap 4.53 (SUID)",
+          "context": "Interactive mode !sh → root"
+        }
+      ],
+      "dir": "reports/2026-07-29-metasploitable2-vuln-exploit",
+      "path": "reports/2026-07-29-metasploitable2-vuln-exploit/report.md",
+      "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-29-metasploitable2-vuln-exploit/",
+      "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-29-metasploitable2-vuln-exploit/report.md",
+      "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-07-29-metasploitable2-vuln-exploit/report.md"
+    },
+    {
+      "slug": "endpoint-web-attack-analysis",
+      "title": "Three Layers, Three Detection Gaps: Sysmon, SentinelOne, and Suricata",
+      "date": "2026-07-22",
+      "updated": "2026-07-22",
+      "lang": "en",
+      "status": "published",
+      "category": "Detection Engineering",
+      "subcategory": "Endpoint & Network Security",
+      "tags": [
+        "sysmon",
+        "wazuh",
+        "sentinelone",
+        "suricata",
+        "edr",
+        "nids",
+        "powershell",
+        "suricata-rules",
+        "owasp",
+        "mitre-attack"
+      ],
+      "summary": "Three attacks across three defensive layers — an obfuscated PowerShell cradle, an EICAR EDR triage in SentinelOne, and SQLi/XSS/Path-Traversal against Apache. Each layer shipped with a real detection gap in its default config, and the report is mostly about finding and closing those gaps.",
+      "cover": "assets/09-sentinelone-mitigation-quarantine.png",
+      "cover_alt": "SentinelOne Mitigation Actions dialog with Quarantine selected",
+      "reading_time": 15,
+      "difficulty": "intermediate",
+      "author": {
+        "name": "Enes Küçükkaya",
+        "url": "https://www.linkedin.com/in/eneskucukkaya/"
+      },
+      "tools": [
+        "Sysmon",
+        "Wazuh",
+        "SentinelOne",
+        "Suricata",
+        "Apache",
+        "PowerShell"
+      ],
+      "lab": {
+        "windows_agent": "WIN-U4KI1MI7UR7 / 192.168.122.81 (Windows Server 2022)",
+        "linux_agent": "linux-agent-vm / 192.168.122.19 (Apache :80, Suricata enp1s0)"
+      },
+      "mitre_attack": [
+        {
+          "id": "T1105",
+          "name": "Ingress Tool Transfer",
+          "tactic": "Command and Control",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1059.001",
+          "name": "Command and Scripting Interpreter: PowerShell",
+          "tactic": "Execution",
+          "confidence": "confirmed"
+        },
+        {
+          "id": "T1190",
+          "name": "Exploit Public-Facing Application",
+          "tactic": "Initial Access",
+          "confidence": "confirmed"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": 1,
+          "layer": "Host / Endpoint (Sysmon + Wazuh)",
+          "attack": "Obfuscated PowerShell download cradle",
+          "verdict": "true-positive",
+          "rule": "Wazuh 92213 (level 15), T1105"
+        },
+        {
+          "id": 2,
+          "layer": "EDR (SentinelOne)",
+          "attack": "EICAR test file",
+          "verdict": "true-positive",
+          "response": "Quarantine"
+        },
+        {
+          "id": 3,
+          "layer": "Network / Web (Suricata + Wazuh)",
+          "attack": "SQLi / XSS / Path Traversal",
+          "verdict": "true-positive",
+          "rule": "Custom SIDs 9000001-9000003"
+        }
+      ],
+      "owasp": [
+        "A03:2021 Injection (SQLi, XSS)",
+        "A01:2021 Broken Access Control (Path Traversal)"
+      ],
+      "dir": "reports/2026-07-22-endpoint-web-attack-analysis",
+      "path": "reports/2026-07-22-endpoint-web-attack-analysis/report.md",
+      "asset_base": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-22-endpoint-web-attack-analysis/",
+      "content_url": "https://raw.githubusercontent.com/EnesK-Dev/cyber-defense-portfolio/main/reports/2026-07-22-endpoint-web-attack-analysis/report.md",
+      "html_url": "https://github.com/EnesK-Dev/cyber-defense-portfolio/blob/main/reports/2026-07-22-endpoint-web-attack-analysis/report.md"
     },
     {
       "slug": "wazuh-sysmon-triage",

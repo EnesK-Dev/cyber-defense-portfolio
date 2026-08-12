@@ -21,6 +21,9 @@ patterns and strengthen defensive posture.
 | :--- | :--- | :--- | :--- |
 | 2026-09-06 | [Hunting a STRRAT C2 Channel in a PCAP: A Step-by-Step Traffic Analysis](reports/2026-09-06-strrat-c2-analysis/report.md) | Malware Analysis | `pcap`, `wireshark`, `command-and-control`, `strrat` |
 | 2026-08-06 | [APT28 vs APT29: Two Russian APTs, Two Doctrines, One ATT&CK Lens](reports/2026-08-06-apt28-vs-apt29/report.md) | Threat Intelligence | `apt28`, `apt29`, `mitre-attack`, `ttp-analysis` |
+| 2026-07-30 | [From Empty Dashboard to Live Intel: Standing Up OpenCTI With Real Feeds](reports/2026-07-30-opencti-setup-review/report.md) | Threat Intelligence | `opencti`, `cti`, `threat-intelligence`, `stix2` |
+| 2026-07-29 | [Chaining Two Medium Bugs to Root: DistCC RCE + a SUID nmap on Metasploitable2](reports/2026-07-29-metasploitable2-vuln-exploit/report.md) | Penetration Testing | `metasploit`, `openvas`, `metasploitable2`, `privilege-escalation` |
+| 2026-07-22 | [Three Layers, Three Detection Gaps: Sysmon, SentinelOne, and Suricata](reports/2026-07-22-endpoint-web-attack-analysis/report.md) | Detection Engineering | `sysmon`, `wazuh`, `sentinelone`, `suricata` |
 | 2026-07-16 | [Triaging Windows Attacks in Wazuh: Where rule.level Lies](reports/2026-07-16-wazuh-sysmon-triage/report.md) | Detection Engineering | `wazuh`, `sysmon`, `siem`, `alert-triage` |
 | 2026-07-15 | [auth2.log: When the Raw Counts Lie (message repeated & invalid user)](reports/2026-07-15-linux-auth2log-bruteforce/report.md) | Log Analysis | `linux`, `auth-log`, `ssh`, `brute-force` |
 | 2026-07-14 | [IOC vs IOA: Fingerprints of a Crime vs Someone Picking the Lock](reports/2026-07-14-ioc-vs-ioa/report.md) | Fundamentals | `ioc`, `ioa`, `detection-engineering`, `threat-intelligence` |
